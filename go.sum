@@ -1,2 +1,4 @@
 github.com/erny03/is105sem03 v0.0.0-20230504152235-6644e4c50e6b h1:BWBJ+V9lewk8ueq4Lj9q88B8yBMB8AeUwPgaDXhd6GA=
 github.com/erny03/is105sem03 v0.0.0-20230504152235-6644e4c50e6b/go.mod h1:Is68dYi2vwu2UxYUP/miDFb9p5fNdIOj3ETas20kzfM=
+github.com/erny03/minyr v0.0.0-20230503145526-6fbad6c38af0 h1:vEJ9C9gXuj0sXJiwZ4xfTIDaR4s3frb6lv0FObpbJW4=
+github.com/erny03/minyr v0.0.0-20230503145526-6fbad6c38af0/go.mod h1:9qy/aYt/lbxp4L1HDYh4L6LHouzjBPlr7FbzqXFQ0jM=

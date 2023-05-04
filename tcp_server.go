@@ -5,6 +5,7 @@ import (
 	"log"
 	"net"
 	"sync"
+	"strings"
 	"github.com/erny03/is105sem03/mycrypt"
 )
 
@@ -40,11 +41,18 @@ func main() {
 
 					dekryptertMelding := mycrypt.Krypter([]rune(string(buf[:n])), mycrypt.ALF_SEM03, len(mycrypt.ALF_SEM03)-4)
 					log.Println("Dekrypter melding: ", string(dekryptertMelding))
-					switch msg := string(dekryptertMelding); msg {
 
-  				        case "ping":
-						_, err = c.Write([]byte("pong"))
-					default:
+					msg := string(dekryptertMelding)
+					switch {
+  				        	case strings.HasPrefix(msg, "ping"):
+							kryptertPong := mycrypt.Krypter([]rune(string("pong")), mycrypt.ALF_SEM03, 4)
+							_, err = c.Write([]byte(string(kryptertPong)))
+
+						case strings.HasPrefix(msg, "Kjevik"):
+							kryptertKjevik := mycrypt.Krypter([]rune("Kjevik;SN39040;18.03.2022 01:50;42.8"), mycrypt.ALF_SEM03, 4)
+							_, err = c.Write([]byte(string(kryptertKjevik)))
+
+						default:
 						_, err = c.Write(buf[:n])
 					}
 					if err != nil {
